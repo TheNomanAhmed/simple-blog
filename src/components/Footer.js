@@ -57,7 +57,7 @@ export const Footer = () => {
             <img src={data.styled.publicURL} alt="Styled Logo" />
           </a>
         </FooterSocialIcons>
-        <p> 👋 Copyrights Noman Ahmed Khan </p>
+        <p> Copyrights Noman Ahmed Khan </p>
       </FooterSocialWrapper>
     </FooterWrapper>
   )
