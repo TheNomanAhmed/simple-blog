@@ -3,6 +3,7 @@ import {
   FooterWrapper,
   FooterSocialWrapper,
   FooterSocialIcons,
+  P,
 } from "../elements"
 import { useStaticQuery, graphql } from "gatsby"
 
@@ -57,7 +58,10 @@ export const Footer = () => {
             <img src={data.styled.publicURL} alt="Styled Logo" />
           </a>
         </FooterSocialIcons>
-        <p> Copyrights Noman Ahmed Khan </p>
+        <P size="xSmall" color="dark3">
+          {" "}
+          Copyrights Noman Ahmed Khan{" "}
+        </P>
       </FooterSocialWrapper>
     </FooterWrapper>
   )
