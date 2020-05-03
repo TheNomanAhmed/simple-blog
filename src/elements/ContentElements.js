@@ -5,7 +5,7 @@ export const ContentWrapper = styled.main`
   grid-row: 3 / span 5;
   background-color: ${props => props.theme.colors.light2};
   padding: ${props =>
-    `${props.theme.spacings.xLarge} ${props.theme.spacing.xxLarge}`};
+    `${props.theme.spacings.xLarge} ${props.theme.spacings.xxLarge}`};
   box-shadow: ${props => props.theme.shadows.shadow1};
   z-index: 10;
 
@@ -15,6 +15,6 @@ export const ContentWrapper = styled.main`
 
   @media ${props => props.theme.breakpoints.mobile} {
     padding: ${props =>
-      `${props.theme.spacings.medium} ${props.theme.spacing.large}`};
+      `${props.theme.spacings.medium} ${props.theme.spacings.large}`};
   }
 `

@@ -16,12 +16,14 @@ export default {
     mobile: "only screen and (max-width: 50rem)",
     tablet: "only screen and (max-width: 65rem)",
   },
-  spacing: {
+  spacings: {
     xxSmall: ".25rem",
     xSmall: ".5rem",
     small: "1rem",
     medium: "2rem",
     large: "3rem",
+    xLarge: "4rem",
+    xxLarge: "6rem",
   },
   animations: {
     button: "box-shadow 0.3s ease",
