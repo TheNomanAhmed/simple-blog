@@ -8,7 +8,7 @@ import {
   Pagination,
 } from "../components"
 
-import { P, H1, ContainerWrapper, FeatureImageWrapper } from "../elements"
+import { P, H1 } from "../elements"
 
 const allPosts = ({ pageContext, data }) => {
   const { currentPage, numPages } = pageContext
