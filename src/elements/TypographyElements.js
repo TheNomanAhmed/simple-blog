@@ -10,6 +10,8 @@ export const P = styled.p`
         return "1rem"
       case "xSmall":
         return "0.875rem"
+      case "xxSmall":
+        return "0.575rem"
       default:
         return "1.125rem"
     }
@@ -55,6 +57,7 @@ export const P = styled.p`
     }
   }};
   text-align: ${props => (props.textAlign ? props.textAlign : "left")};
+  align-self: ${props => (props.alignSelf ? props.alignSelf : "auto")};
 `
 
 export const H1 = styled.h1`

@@ -5,6 +5,7 @@ export const NavWrapper = styled.nav`
   grid-row: 1 / 2;
   display: flex;
   align-items: center;
+  justify-content: space-between;
 
   & img {
     height: 50px;

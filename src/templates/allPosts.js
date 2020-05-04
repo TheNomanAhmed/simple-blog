@@ -34,12 +34,6 @@ const allPosts = ({ pageContext, data }) => {
           They were dropping, losing altitude in a canyon of rainbow foliage, a
           lurid communal mural that completely covered the hull of the Villa
           bespeak a turning in, a denial of the bright void beyond the hull.
-          Molly hadn’t see arrow wedge of light from a half-open service hatch
-          at the rear of the arcade showed him broken lengths of damp chipboard
-          and the dripping chassis of a gutted game console. Then a mist closed
-          over the black water and the robot gardener. A narrow wedge of light
-          from a half-open service hatch framed a heap of discarded fiber optics
-          and the chassis of a broken mirror bent and elongated as they fell.
         </P>
         {posts.map(post => (
           <ContentCard
@@ -48,6 +42,7 @@ const allPosts = ({ pageContext, data }) => {
             title={post.node.frontmatter.title}
             excerpt={post.node.frontmatter.excerpt}
             slug={post.node.frontmatter.slug}
+            image={post.node.frontmatter.featureImage}
           />
         ))}
       </Content>
@@ -75,6 +70,13 @@ export const pageQuery = graphql`
             title
             excerpt
             date(formatString: "MMMM DD, YYYY")
+            featureImage {
+              childImageSharp {
+                fluid {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
           }
         }
       }

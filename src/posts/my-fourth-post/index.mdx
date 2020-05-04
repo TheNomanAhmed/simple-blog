@@ -1,7 +1,125 @@
 ---
-title: My Fourth Post
-slug: my-fourth-post
+title: Gatsby + Github + Styled Components + Netlify CMS
+slug: gatsby-styled
 date: 2020-03-24
 featureImage: mountains.jpg
-excerpt: It was chambered for .22 long rifle, and Case would’ve preferred lead azide explosives to the Tank War, mouth touched with hot gold as a gliding cursor struck sparks from the wall of a junked console. A narrow wedge of light from a half-open service hatch framed.
+excerpt: Host a Gatsby site in Netlify
 ---
+
+## Gatsby + Github + Styled Components + Netlify CMS
+
+Yes this is what I have used to make this site up and running, and it is hosted in netlify for free. I would like to share my knowledge with you, how to make this possible
+
+## Step 1
+
+Create a new gatsby project
+
+gatsby new mygatsbyproject
+
+## Step 2
+
+I assume that you have a basic idea of how gatsby works, so not diving into it,
+
+You need to install few plugins inorder to pull data from markdown files, this project is structured in such a way that, all the markdown files will be stored in posts folder.
+The plugins are :
+
+- gatsby-transformer-remark
+- gatsby-transformer-sharp
+- gatsby-image
+- gatsby-source-file-system
+- gatsby-plugin-sharp
+- netlify-cms
+- gatbsy-plugin-netlify-cms
+
+The plugins are necessary for transforming markdown pages to page content, handling images in Gatsby, and source-file-system is required to handle all the files, in this case markdown files
+
+The idea is to store the contents in a markdown file and through Gatsby pull the contents of the markdown file and display it in a template in a way which we want it to appear. In Gatsby it is very easy to create routes as pages, for example if I want an about page, i just create `about.js` page in the pages folder, it will automatically create a /about route and will redirect to that component.
+In blogging world the path is not prefixed, it is rather fetched from the content. Therefore we need to create certain fields for our blog markdown template, before that, even if we are not using any CMS, we are just creating markdown pages by our own, Gatsby should still be able to pull those files and display it in a template.
+I will try to explain with this project as an example, if you want to refer code, then click on the Github icon in footer of this website, it will redirect you to the Github public repo where this project is hosted.
+
+## Step 3
+
+We add configurations in `gatsby-config.js`
+This is a place where we define all our configurations, the plugins to use, we include `gatsby-transformer-remark gatsby-source-filesystem` . This helps us to pull the files from the directory and pull its contents.
+
+## Step 4
+
+Create a simple post.md
+create a markdown file named `post.md` in posts folder
+In the markdown file we define the header section with some fields, which are necessary for all the blog posts, later we will configure this with a CMS, We might be needing a path, which is related to the content, a title - related to the blog post, date field, and image if you want to add image in the post
+Then we type the content of the markdown file
+
+## Step 5
+
+Now we have set path for each blog post inside the file itself, Next we need to create a blog page which lists all the blog posts.
+Create `blog.js` in pages to list all our blogs
+export a graphql query to fetch all markdown files using `allMarkdownRemark`
+
+We get the data in the BlogPage component as a `data` prop, we iterate over all the edges and render `PostListing` component which renders - title, and other data. This is basically to create a list.
+
+You can refer to the `PostListing` component in the components>Posts>PostListing.js for further details
+Now we run gatsby develop,
+go to localhost:8000/blog
+we get to see all the listing of blogs
+The task isn't finished yet
+When we click on the blog post, it wont re-direct, because we haven't created the blog Template yet.
+
+## Step 6
+
+Now we need to create a blog template to read the contents from a markdown file and display in the way we want.
+
+create `blogTemplate.js` in templates folder
+
+## Step 7
+
+Now we need to dynamically create a route, according to the path field of blog.
+We do that in `gatsby-node.js` with the help of `createPage` API
+we create a path using, the `frontmatter.path` from each node
+
+## Step 8
+
+Ready to test,
+run gatsby develop
+and go back to your browser, see that when clicking on title of each blog post redirects to the blog page.
+Host the project in Github
+
+## Deploy to Netlify
+
+- Go to netlify
+- Sign in with Github
+- Create a new site , select the repository
+- It will automatically, get the config for build process In this case it is gatsby build
+- It will deploy
+  the site automatically and generate a public URL
+  Whenever we make any changes and push it to github, it will re run the build command and deploy which will mostly take few minutes.
+  After that it gets reflected in the live site.
+
+## Create content from a CMS
+
+I have used Netlify CMS in this project.
+Setting up netlify cms is very easy, we have already installed the plugins in the step 2.
+In root of your project, create a folder static > admin
+and create a file `config.yml`
+
+In this file we define which repository we need to connect to,
+media folder, the fields which are necessary in a blog post etc.
+Find the settings [here](https://github.com/jishnukoottala/gatsby-minimalistic-blog-template/blob/master/static/admin/config.yml)
+
+We need certain settings to enable Github signin as admin in our Netlify hosted project
+
+- Go to your Github > Profile > Setting > Developer Setting
+- OAuth Apps > New OAuth App
+- In the authorization callback URL , paste this --> https://api.netlify.com/auth/done
+- Fill the rest of the fields, the application name, homepage URL (the URL generated from Netlify, after deploying the site to Netlify)
+- After doing this, we get Client ID and Client Secret
+- Go to Netlify > Your Project > Site Settings > Access Control > OAuth
+- Click on Install provider and add the Client ID and Client Secret generated from the above step
+- Its done.
+- Push all the latest changes to the repo, Netlify will automatically build and publish the changes
+- Inorder to create content, go to your live site -> eg : yoursitename.netlify.com/admin/ (don't forget to put the "/" after admin)
+- It will take you to the admin panel, where you can create markdown posts.
+- After you create the post, publish it,the file (markdown) will be automatically committed to your github repo and Netlify will pickup the changes, build it again, and in a couple of minutes, the changes are published.
+
+If you found this article useful, please give a star to my github [repo](https://github.com/jishnukoottala/gatsby-minimalistic-blog-template).
+
+This is a minimalistic template, so you can clone it, customize it, and use it for blogging.

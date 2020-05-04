@@ -9,8 +9,10 @@ export default {
     dark1: "#1b262c",
     dark2: "#222831",
     dark3: "#363062",
+    dark4: "#222831",
     light1: "#d4ebd0",
     light2: "#f1e6d1",
+    light3: "#FDF6E3",
   },
   breakpoints: {
     mobile: "only screen and (max-width: 50rem)",
@@ -33,7 +35,7 @@ export default {
     smShadow: "0 1px 2px 0 rgba(0, 0, 0, 0.05)",
     mdShadow:
       "0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)",
-    lgshadow:
+    lgShadow:
       "0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)",
   },
 }
