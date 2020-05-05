@@ -55,5 +55,12 @@ module.exports = {
         display: "swap",
       },
     },
+    {
+      resolve: `gatsby-plugin-page-progress`,
+      options: {
+        includePaths: [],
+        excludePaths: ["/"],
+      },
+    },
   ],
 }

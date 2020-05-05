@@ -42,7 +42,6 @@ const allPosts = ({ pageContext, data }) => {
             title={post.node.frontmatter.title}
             excerpt={post.node.frontmatter.excerpt}
             slug={post.node.frontmatter.slug}
-            image={post.node.frontmatter.featureImage}
           />
         ))}
       </Content>
@@ -70,13 +69,6 @@ export const pageQuery = graphql`
             title
             excerpt
             date(formatString: "MMMM DD, YYYY")
-            featureImage {
-              childImageSharp {
-                fluid {
-                  ...GatsbyImageSharpFluid
-                }
-              }
-            }
           }
         }
       }

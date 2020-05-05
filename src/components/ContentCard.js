@@ -2,7 +2,7 @@ import React from "react"
 import { CardWrapper, P, H2 } from "../elements"
 import { Button } from "../components"
 
-export const ContentCard = ({ date, title, excerpt, slug, image }) => {
+export const ContentCard = ({ date, title, excerpt, slug }) => {
   return (
     <CardWrapper>
       <P
