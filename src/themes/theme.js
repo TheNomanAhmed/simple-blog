@@ -5,7 +5,7 @@ export default {
   },
   colors: {
     main1: "#21243d",
-    main2: "#ff7c7c",
+    main2: "#E4A713",
     dark1: "#1b262c",
     dark2: "#222831",
     dark3: "#363062",

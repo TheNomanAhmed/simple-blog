@@ -17,6 +17,10 @@ export const NavWrapper = styled.nav`
       margin-left: 10px;
       text-decoration: none;
     }
+
+    & a:hover {
+      color: ${props => props.theme.colors.main2};
+    }
   }
 
   @media ${props => props.theme.breakpoints.tablet} {

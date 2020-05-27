@@ -6,7 +6,7 @@ import { FeatureImageWrapper } from "../elements"
 export const FeatureImage = ({ fluid }) => {
   const data = useStaticQuery(graphql`
     {
-      imageSharp(fluid: { originalName: { eq: "office.jpg" } }) {
+      imageSharp(fluid: { originalName: { eq: "trees.jpg" } }) {
         fluid {
           ...GatsbyImageSharpFluid
         }

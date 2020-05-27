@@ -60,6 +60,8 @@ module.exports = {
       options: {
         includePaths: [],
         excludePaths: ["/"],
+        color: `#E4A713`,
+        height: 5,
       },
     },
   ],
