@@ -11,6 +11,14 @@ export const NavWrapper = styled.nav`
     height: 50px;
   }
 
+  & .nav-items {
+    a {
+      color: #21243d;
+      margin-left: 10px;
+      text-decoration: none;
+    }
+  }
+
   @media ${props => props.theme.breakpoints.tablet} {
     grid-column: 2 / span 6;
   }

@@ -15,6 +15,7 @@ export default {
     light3: "#FDF6E3",
   },
   breakpoints: {
+    smallMobile: "only screen and (max-width: 25rem)",
     mobile: "only screen and (max-width: 50rem)",
     tablet: "only screen and (max-width: 65rem)",
   },
