@@ -129,7 +129,7 @@ const lightTheme = {
 
 export const Container = ({ children }) => {
   const dispatch = useGlobalDispatchContext()
-  const { cursorStyles, currentTheme } = useGlobalStateContext()
+  const { currentTheme } = useGlobalStateContext()
   return (
     <ThemeProvider theme={currentTheme === "dark" ? darkTheme : lightTheme}>
       <GlobalStyle />
