@@ -32,7 +32,7 @@ export const Nav = () => {
 
   return (
     <NavWrapper>
-      <Link to="./">
+      <Link to="/">
         <img src={data.logo.publicURL} alt="My logo" />
       </Link>
       <div className="nav-items">
