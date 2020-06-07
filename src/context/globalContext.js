@@ -13,12 +13,6 @@ const globalReducer = (state, action) => {
         currentTheme: action.theme,
       }
     }
-    case "CURSOR_TYPE": {
-      return {
-        ...state,
-        cursorType: action.cursorType,
-      }
-    }
     default: {
       throw new Error(`Unhandled action type: ${action.type}`)
     }
@@ -30,11 +24,10 @@ const globalReducer = (state, action) => {
 export const GlobalProvider = ({ children }) => {
   const [state, dispatch] = useReducer(globalReducer, {
     currentTheme:
+      typeof window !== "undefined" &&
       window.localStorage.getItem("theme") == null
         ? "dark"
-        : window.localStorage.getItem("theme"),
-    cursorType: false,
-    cursorStyles: ["pointer", "hovered", "locked", "white"],
+        : typeof window !== "undefined" && window.localStorage.getItem("theme"),
   })
 
   return (
@@ -48,5 +41,4 @@ export const GlobalProvider = ({ children }) => {
 
 //custom hooks for when we want to use our global state
 export const useGlobalStateContext = () => useContext(GlobalStateContext)
-
 export const useGlobalDispatchContext = () => useContext(GlobalDispatchContext)
