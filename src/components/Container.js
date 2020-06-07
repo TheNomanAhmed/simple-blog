@@ -7,10 +7,7 @@ import { createGlobalStyle, ThemeProvider } from "styled-components"
 import { normalize } from "styled-normalize"
 
 // Context
-import {
-  useGlobalStateContext,
-  useGlobalDispatchContext,
-} from "../context/globalContext"
+import { useGlobalStateContext } from "../context/globalContext"
 
 const GlobalStyle = createGlobalStyle`
   *{
@@ -110,10 +107,9 @@ const lightTheme = {
 }
 
 export const Container = ({ children }) => {
-  const dispatch = useGlobalDispatchContext()
   const { currentTheme } = useGlobalStateContext()
   return (
-    <ThemeProvider theme={currentTheme === "dark" ? darkTheme : lightTheme}>
+    <ThemeProvider theme={currentTheme === "light" ? darkTheme : lightTheme}>
       <GlobalStyle />
       <ContainerWrapper>
         <Nav />
