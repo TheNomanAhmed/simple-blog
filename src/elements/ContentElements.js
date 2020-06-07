@@ -4,7 +4,7 @@ export const ContentWrapper = styled.main`
   border-radius: 1rem;
   grid-column: 4 / span 8;
   grid-row: 3 / span 5;
-  background: ${props => props.theme.colors.light2};
+  background: ${props => props.theme.colors.primary2};
   padding: ${props =>
     `${props.theme.spacings.xLarge} ${props.theme.spacings.xxLarge}`};
   box-shadow: ${props => props.theme.shadows.lgShadow};

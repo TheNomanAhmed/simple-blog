@@ -9,17 +9,34 @@ export const NavWrapper = styled.nav`
 
   & img {
     height: 50px;
+    fill: ${props => props.theme.colors.secondary1};
   }
 
   & .nav-items {
+    display: flex;
+    align-items: center;
+
     a {
-      color: #21243d;
       margin-left: 10px;
       text-decoration: none;
+      color: ${props => props.theme.colors.secondary1};
     }
 
     & a:hover {
-      color: ${props => props.theme.colors.main2};
+      color: ${props => props.theme.colors.secondary2};
+    }
+
+    span {
+      /* height: 20px;
+      width: 20px; */
+      background: ${props => props.theme.colors.primary2};
+      color: ${props => props.theme.colors.secondary1};
+
+      padding: 4px 8px;
+      cursor: pointer;
+      /* border-radius: 100%; */
+      display: inline-block;
+      position: relative;
     }
   }
 

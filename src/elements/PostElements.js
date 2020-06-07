@@ -3,7 +3,7 @@ import styled from "styled-components"
 export const PostWrapper = styled.main`
   grid-column: 4 / span 8;
   /* grid-row: 4 / span 5; */
-  background-color: ${props => props.theme.colors.light2};
+  background-color: ${props => props.theme.colors.primary2};
   padding: ${props =>
     `${props.theme.spacings.xLarge} ${props.theme.spacings.large}`};
   box-shadow: ${props => props.theme.shadows.shadow1};
@@ -15,7 +15,7 @@ export const PostWrapper = styled.main`
   h4,
   h5,
   h6 {
-    color: ${props => props.theme.colors.dark1};
+    color: ${props => props.theme.colors.text};
   }
 
   h1:not(:first-child),
@@ -68,12 +68,12 @@ export const PostWrapper = styled.main`
     font-size: 1.125rem;
     line-height: 1.875rem;
     font-weight: 400;
-    color: ${props => props.theme.colors.dark2};
+    color: ${props => props.theme.colors.text};
     margin-top: 2rem;
   }
 
   a {
-    color: ${props => props.theme.colors.main1};
+    color: ${props => props.theme.colors.text};
     text-decoration: underline;
   }
 
@@ -100,22 +100,22 @@ export const PostWrapper = styled.main`
 
   ul,
   ol {
-    color: ${props => props.theme.colors.main1};
+    color: ${props => props.theme.colors.text};
   }
 
   code {
     font-family: ${props => props.theme.fonts.code};
     font-size: 0.9rem;
     line-height: 1.875rem;
-    color: ${props => props.theme.colors.light1};
-    background-color: ${props => props.theme.colors.dark3};
+    color: ${props => props.theme.colors.primary1};
+    background-color: ${props => props.theme.colors.text};
     padding: 0 0.3rem;
   }
 
   hr {
     border: 0;
     height: 1px;
-    background: ${props => props.theme.colors.dark1};
+    background: ${props => props.theme.colors.text};
     opacity: 0.1;
     margin-top: 2rem;
   }

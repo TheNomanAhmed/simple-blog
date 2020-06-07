@@ -25,14 +25,14 @@ export const CardWrapper = styled(props => <Link {...props} />)`
   align-items: start;
   justify-content: center;
   border-radius: 1.5rem;
-  border-left: 3px solid ${props => props.theme.colors.main2};
+  border-left: 3px solid ${props => props.theme.colors.secondary2};
 
   transition: 0.2s ease;
 
   &:hover,
   &:focus {
-    border-left: 3px solid ${props => props.theme.colors.light3};
-    background-color: ${props => props.theme.colors.light3};
+    border-left: 3px solid ${props => props.theme.colors.secondary2};
+    background-color: ${props => props.theme.colors.primary1};
   }
   p {
     margin: 0px;
