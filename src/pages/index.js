@@ -12,16 +12,15 @@ const IndexPage = () => {
             👋
           </span>
         </h1>
-        <p>
-          This is a starter Blog created using MDX and styled components in
-          GatsbyJS
-        </p>
+        <h2>
+          This is a starter Blog created by &copy; Noman Ahmed Khan using MDX
+          and styled components in GatsbyJS
+        </h2>
 
         <ContentCard
           date="2012-11-03"
-          title="Somthing Demo"
-          excerpt="Lets edit some data , but the muted purring of the blowers and the amplified breathing of the fighters. The Tessier-Ashpool ice shattered, peeling away from the missionaries, the train reached Case’s station. He woke and found her stretched beside him in the dark, curled in his devotion to esoteric forms of tailor-worship. 
-"
+          title="Blogs section"
+          excerpt="Checkout some of my recent blogs that i have written."
           slug="/posts"
         ></ContentCard>
       </Content>

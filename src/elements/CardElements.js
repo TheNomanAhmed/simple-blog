@@ -38,6 +38,7 @@ export const CardWrapper = styled(props => <Link {...props} />)`
     margin: 0px;
   }
   h2 {
+    position: relative;
     margin-bottom: 0.5rem;
   }
 

@@ -1,4 +1,5 @@
 export * from "./ContainerElements"
+export * from "./BlogContainerElements"
 export * from "./NavElements"
 export * from "./FooterElements"
 export * from "./ImageElements"

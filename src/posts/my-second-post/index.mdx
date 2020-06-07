@@ -1,7 +1,65 @@
 ---
-title: My Second Post
-slug: my-second-post
+title: Gatsby and Netlify CMS
+slug: Gatsby-and-NetlifyCMS
 date: 2020-03-22
-featureImage: sky.jpg
-excerpt: After the postoperative check at the rear of the arcade showed him broken lengths of damp chipboard and the dripping chassis of a gutted game console.
+featureImage: netlify.png
+excerpt: There's quite a few headless CMS options. After doing some research, I decided to go with Netlify CMS. I intended to use Netlify for hosting anyway, so I figured why not go with that and try to synchronize.
 ---
+
+There's quite a few headless CMS options. After doing some research, I decided to go with Netlify CMS. I intended to use Netlify for hosting anyway, so I figured why not go with that and try to synchronize
+
+### Gatsby
+
+My first experience with Gatsby was the documentation. I had never used a static site generator before. React wasn't new to me, but a lot of the inner workings of Gatsby were.
+
+And let me tell you...
+
+Their documentation is amazing. Truly, the writing was clean and crisp. The examples and descriptions were a charm to follow. I've used quite a few libraries and poured over the documentation for them. Firebase, for example is one that I recently spent a lot of time in, and often was left scratching my head at. Yet, for Gatsby there wasn't a moment of confusion or backtracking. I was able to replicate everything they teach in the tutorial with relative ease.
+
+Granted, the mileage may vary for other people. If you're looking to pick up Gatsby, I can't recommend it enough for the newbie experience. Within a few hours you'll have a firm understanding and be able to dive right in to producing your own content.
+
+Gatsby is well supported by the open source community. There are dozens of official plugins that make doing things easy and efficient. Also, there are starters, or bundles, that make firing up your project smooth.
+
+Now, I didn't use any of those. Because, I wanted to understand from from the base level how to put a Gatsby site together. I can see myself calling upon starters in the future to make my time spent more efficient. Of course, I get how it all works now too. I suggest learning it, as I did, then calling upon starters.
+
+I did run into issues eventually with Gatsby, but they were more in the integration of Netlify CMS than anything related to the core of what the framework does.
+
+Being able to create pages using React, and add components to them was the dream for me. I really have a strong understanding of React, so that part felt right at home.
+
+GraphQL... Wow. By default, Gatsby uses it. This was my first time touching the technology. I had heard the term thrown around for awhile, and good things about it. Now that I had a taste, I hunger for more. GraphQL made dealing with the website's data so much more efficient and intuitive. Building queries in its web-based IDE GraphiQL was a dream for visualizing and optimizing the pieces of data I needed for my components.
+
+If you're coming from the create-react-app world, like I was, Gatsby is a little different. You don't need to install react-router-dom, as Gatsby handles its own routing. You set up your dynamic pages in a gatsby-node file, with a few lines of code.
+
+Gatsby being able to parse over Markdown files and generate pages programmatically is so interesting to me. That was the part I spent the most time on, as I really wanted to understand how they managed to do that. With Netlify as a host, anytime you update your Github repo with changes, it rebuilds the live site, meaning new content is added automatically.
+
+The only negative, that I could find, was that the way Gatsby handles images. Not so much the tech, rather that sometimes I couldn't figure out little quirks with the fluid images that are provided by the gatsby-image-sharp plugin. For example, if I tried to float a fluid image the image it would disappear. I figure it has something to do with the wrapper component around the image, but didn't deep dive down that rabbit hole too much. I worked around the quirks. The lazy-loading portion is the best part and worth the struggle to figure it all out. Especially because my sister will be using her site for a comic and art, so images were super important to have working correctly.
+
+### Netlify CMS
+
+The Netlify CMS documentation was fair, not quite Gatsby level, which I feel is my new bar. I was able to follow and understand it. Setting up the CMS is actually a piece of cake. You do an npm install, make an assets folder and then setup your schemas in a config.yml file. After that, it pretty much takes care of itself. You need to actually host it on Netlify for the CMS to work, if you're adding test or placeholder content. Otherwise it just hangs out in the CMS's local state and goes away on page refresh.
+
+The CMS makes git commits to your repro for you, which in turn rebuilds your site when its live on Netlify. It can take five or so minutes to see the live changes on your site. If you don't want to put it live on the internet, I'm fairly certain you could use the new Netlify CLI to host it locally. I didn't test that out. I think I will in future projects, if I decide to use the CMS again.
+
+Netlify lets you login by default into the CMS with your Github account. There is also oauth provider integration through the Netlify Identity service. I'd suggest using this to give the person updating the site's content access. You can even go as far as removing the branding from Netlify and place your own. I could see that working well for freelancers or agencies building sites for people.
+
+This was my first time using a headless CMS, so I don't have much to compare it to. The interface is nice and snappy, as it's made in React too. I don't have my sister's impressions as an end user yet, as she just started adding her content. If we discover issues or start to develop a negative opinion on it, I may do a follow up blog post.
+
+Otherwise, it's nice and I have no complaints, about it as a standalone thing. As I said, my issues start with the Gatsby integration.
+
+### Gatsby and Netlify CMS Together
+
+Together Gatsby and Netlify CMS have a rocky relationship. I say that because it took quite a few plugins for me to get things to work. I'm still uncertain if they'll break or not.
+
+I used a plugin called gatsby-markdown-remark to parse over all my markdown files and get the data out of them. There's also plugins like gatsby-remark-images, which will turn your markdown images into gatsby-image-sharp images. It's an ecosystem of plugins to make things seamless. Seldom is it seamless.
+
+I noticed that occasionally when building out my site, my GraphQL queries would break and not be able to find the markdown images. Super annoying. Come to find out, after almost a whole day of Googling, it was because of the way Netlify CMS handles images. You see, it places the images in their own separate directory called assets. Gatsby suspects that your images are with your pages.
+
+To fix that, your plugins must be loaded in a certain order on your gatsby-config file. You also should use a plugin called gatsby-plugin-netlify-cms-paths. Also, all Netlify CMS stuff has to go last. Adding those plugins and tweaking the config file seemed to help. I hope I've gotten it to a stable point. Because, the last thing I need is for my sister to be adding content and have her site break on build. That wouldn't be a good user experience at all.
+
+I do recommend the pair together, only if you have patience to sort out these quirks. I think in the future I may try some of the other CMS options and share my opinions/findings in comparison.
+
+### Final Thoughts
+
+Netlify CMS is free. Gatsby is free. I didn't see anything about a cost associated with either. I'll also mention that Netlify hosting is free. You can pay for other perks when using it, if you want. Baseline though, there's no risk to you. I can't complain about price point at all. It cost me ten bucks for the entire project, as I needed to get her a domain. All it took was a little leg work and she's off to the races.
+
+I hope this first impressions post was helpful for all of you. If you have any questions or concerns, feel free to ask. All in all, I recommend them both, especially Gatsby. Get your React on, get your CMS on, and get out there and make cool stuff. Because, that's what I'm going to do.
