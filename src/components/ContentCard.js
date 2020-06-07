@@ -17,7 +17,7 @@ export const ContentCard = ({ date, title, excerpt, slug }) => {
       <H2 textAlign="left" margin="0 0 1rem 0">
         {title}
       </H2>
-      <P size="small" color="dark2" textAlign="left" margin="0 0 1.5rem 0">
+      <P size="small" textAlign="left" margin="0 0 1.5rem 0">
         {excerpt}
       </P>
       <Button href={slug} className="button">

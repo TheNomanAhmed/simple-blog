@@ -53,7 +53,7 @@ export const P = styled.p`
       case "light2":
         return props.theme.colors.light2
       default:
-        return props.theme.colors.dark1
+        return props.theme.colors.text
     }
   }};
   text-align: ${props => (props.textAlign ? props.textAlign : "left")};
@@ -76,7 +76,7 @@ export const H1 = styled.h1`
       case "light2":
         return props.theme.colors.light2
       default:
-        return props.theme.colors.dark1
+        return props.theme.colors.secondary1
     }
   }};
   font-weight: 400;
@@ -100,7 +100,7 @@ export const H2 = styled.h2`
       case "light2":
         return props.theme.colors.light2
       default:
-        return props.theme.colors.dark1
+        return props.theme.colors.secondary1
     }
   }};
   font-weight: 400;

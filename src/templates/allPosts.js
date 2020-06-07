@@ -28,7 +28,7 @@ const allPosts = ({ pageContext, data }) => {
         <H1 textAlign="center" margin="0 0 1rem 0">
           Home Page
         </H1>
-        <P color="dark2" textAlign="center">
+        <P textAlign="center">
           Some paragpraph Then a mist closed over the black water and the
           dripping chassis of a broken mirror bent and elongated as they fell.
           They were dropping, losing altitude in a canyon of rainbow foliage, a

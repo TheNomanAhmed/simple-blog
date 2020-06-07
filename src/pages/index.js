@@ -1,21 +1,23 @@
 import React from "react"
 import { Container, FeatureImage, Content, ContentCard } from "../components"
 
+import { H1, P } from "../elements"
+
 const IndexPage = () => {
   return (
     <Container>
       <FeatureImage />
       <Content>
-        <h1>
+        <H1>
           Hello{" "}
           <span role="img" aria-label="Wave hand">
             👋
           </span>
-        </h1>
-        <h2>
+        </H1>
+        <P>
           This is a starter Blog created by &copy; Noman Ahmed Khan using MDX
           and styled components in GatsbyJS
-        </h2>
+        </P>
 
         <ContentCard
           date="2012-11-03"
