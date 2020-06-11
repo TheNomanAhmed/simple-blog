@@ -4,6 +4,7 @@
 }
 
 .gatsby-highlight pre[class*="language-"] {
+  overflow-x: scroll;
   -webkit-overflow-scrolling: touch;
   padding: 1rem 0.75rem;
   border-radius: 0.25rem;

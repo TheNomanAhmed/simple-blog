@@ -27,7 +27,7 @@ export const GlobalProvider = ({ children }) => {
       typeof window !== "undefined" &&
       window.localStorage.getItem("theme") == null
         ? "light"
-        : typeof window !== "undefined" && window.localStorage.getItem("theme"),
+        : "dark",
   })
 
   return (

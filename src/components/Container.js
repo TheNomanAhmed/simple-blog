@@ -4,7 +4,7 @@ import { Nav, Footer } from "../components"
 
 //Styled Components
 import { createGlobalStyle, ThemeProvider } from "styled-components"
-import { normalize } from "styled-normalize"
+// import { normalize } from "styled-normalize"
 
 // Context
 import { useGlobalStateContext } from "../context/globalContext"
