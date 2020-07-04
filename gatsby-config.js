@@ -64,5 +64,16 @@ module.exports = {
         height: 5,
       },
     },
+    {
+      resolve: "gatsby-plugin-firebase",
+      options: {
+        credentials: {
+          apiKey: process.env.FIREBASE_API_KEY || "none",
+          databaseURL: process.env.FIREBASE_DATABASE_URL || "none",
+          projectId: process.env.FIREBASE_PROJECT_ID || "none",
+          appId: process.env.FIREBASE_APPID || "none",
+        },
+      },
+    },
   ],
 }
