@@ -12,7 +12,7 @@ const IndexPage = () => {
       <FeatureImage />
       <Content>
         <H1>
-          Hello{" "}
+          Hello World{" "}
           <span role="img" aria-label="Wave hand">
             👋
           </span>
