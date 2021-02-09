@@ -1,12 +1,51 @@
 import React from "react"
 import { Container, FeatureImage, Content, ContentCard } from "../components"
+import Swiper from "react-id-swiper"
 
+import Img from "gatsby-image"
+
+import "swiper/swiper-bundle.css"
+import { useStaticQuery, graphql } from "gatsby"
 // import ClapButton from "react-clap-button"
 
 import { H1, P } from "../elements"
 
+const sliderParams = {
+  slidesPerView: 3,
+  spaceBetween: 30,
+  freeMode: true,
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
+  },
+}
+
 const IndexPage = () => {
-  const onCountChange = ({ count, countTotal }) => {}
+  const data = useStaticQuery(graphql`
+    query {
+      image1: file(relativePath: { eq: "office.jpg" }) {
+        childImageSharp {
+          fluid(maxWidth: 500) {
+            ...GatsbyImageSharpFluid_withWebp_noBase64
+          }
+        }
+      }
+      image2: file(relativePath: { eq: "notfound.jpg" }) {
+        childImageSharp {
+          fluid(maxWidth: 500) {
+            ...GatsbyImageSharpFluid_withWebp_noBase64
+          }
+        }
+      }
+      image3: file(relativePath: { eq: "trees.jpg" }) {
+        childImageSharp {
+          fluid(maxWidth: 500) {
+            ...GatsbyImageSharpFluid_withWebp_noBase64
+          }
+        }
+      }
+    }
+  `)
   return (
     <Container>
       <FeatureImage />
@@ -29,6 +68,17 @@ const IndexPage = () => {
           This is a starter Blog created by &copy; Noman Ahmed Khan using MDX
           and styled components in GatsbyJS
         </P>
+
+        <Swiper {...sliderParams}>
+          <Img fluid={data.image1.childImageSharp.fluid} />
+          <Img fluid={data.image2.childImageSharp.fluid} />
+          <Img fluid={data.image3.childImageSharp.fluid} />
+          <Img fluid={data.image2.childImageSharp.fluid} />
+          <Img fluid={data.image1.childImageSharp.fluid} />
+          <Img fluid={data.image2.childImageSharp.fluid} />
+          <Img fluid={data.image3.childImageSharp.fluid} />
+          <Img fluid={data.image2.childImageSharp.fluid} />
+        </Swiper>
 
         <ContentCard
           date="2012-11-03"
